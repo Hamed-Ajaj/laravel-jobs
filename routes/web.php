@@ -12,15 +12,28 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', function () {
-    $jobs = Job::with('employer')->cursorPaginate(3);
-    return view('jobs',[
+    $jobs = Job::with('employer')->latest()->cursorPaginate(3);
+    return view('jobs.index',[
         "jobs" => $jobs
     ]);
 });
 
+Route::post('/jobs', function () {
+
+    Job::create([
+        'title' => request('title'),
+        'salary' => request('salary'),
+        'employer_id' => 1
+    ]);
+});
+
+Route::get('/jobs/create', function () {
+    return view('jobs.create');
+});
+
 Route::get('/jobs/{id}', function (string $id) {
 
-    return view('job',[
+    return view('jobs.show',[
         'job' => Job::find($id) ]);
 });
 

@@ -9,9 +9,14 @@ class Job extends Model
 {
     use HasFactory;
     protected $table = 'job_listings';
+
+    // you can use guarded to only secure specific fields
+    // protected $guarded = [];
+
     protected $fillable = [
         'title',
-        'salary'
+        'salary',
+        'employer_id'
     ];
 
     public function employer()
