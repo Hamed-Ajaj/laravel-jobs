@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Job;
-use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
@@ -13,6 +12,10 @@ class JobController extends Controller
         return view('jobs.index',[
             "jobs" => $jobs
         ]);
+    }
+
+    public function create(){
+        return view('jobs.create');
     }
 
     public function store(){
