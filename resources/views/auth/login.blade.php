@@ -10,16 +10,16 @@
                     <div class="sm:col-span-4">
                         <x-form-label for="email">Email</x-form-label>
                         <div class="mt-2">
-                            <x-form-input id="email" type="email" name="email" placeholder="Ajaj" />
+                            <x-form-input id="email" value="{{ old('email') }}" type="email" name="email"/>
                             <x-form-error name="email" />
                         </div>
                     </div>
 
                     <div class="sm:col-span-4">
-                        <x-form-label for="passpword">Password</x-form-label>
+                        <x-form-label for="password">Password</x-form-label>
                         <div class="mt-2">
-                            <x-form-input id="passpword" type="password" name="passpword" placeholder="Ajaj" />
-                            <x-form-error name="passpword" />
+                            <x-form-input id="password" type="password" name="password"/>
+                            <x-form-error name="password" />
                         </div>
                     </div>
                 </div>
